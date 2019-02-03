@@ -11,9 +11,13 @@ public void draw()
 {
   sierpinski(500 - change/2 ,change/2,change);
   if(mouse == true){
-    change++; //change+ change* 0.005; // Interesting thing happens when you multiply change by a number(change = change * 0.5)
+    if(change%100 == 0){
+      change = change - 1;
+    }else{
+    change = change + 2; //change+ change* 0.005; // Interesting thing happens when you multiply change by a number(change = change * 0.5)
     //fill(255,255,255, 1);
     //rect(0,0,1000,1000);
+    }
   }
 }
 public void mouseClicked()//optional
