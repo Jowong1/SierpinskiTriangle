@@ -1,32 +1,32 @@
-int l = 0;
-int n = 0;
-int num = 50;
-int siz = 1000;
+int change = 300;
+boolean mouse = false;
 public void setup()
 {
   size(1000,1000);
-  frameRate(80);
+  background(0);
+  
+  //noFill();
 }
 public void draw()
 {
-  background(0);
-  sierpinski(500,500,50);
+  sierpinski(500 - change/2 ,change/2,change);
+  if(mouse == true){
+    change++; //change+ change* 0.005; // Interesting thing happens when you multiply change by a number(change = change * 0.5)
+    //fill(255,255,255, 1);
+    //rect(0,0,1000,1000);
+  }
 }
-public void mouseDragged()//optional
+public void mouseClicked()//optional
 {
-  l = l - 5;
-  n = n + 4;
-  siz= siz - 10;
+  mouse = true;
 }
 public void sierpinski(int x, int y, int len) 
 {
-  rectMode(CENTER);
-  rect(x, y, len, len);
-  if(num < 0){
-    
+  if(len <= 20){//Math.sqrt(change)){ //50 looks nice
+    triangle(x, y, x + len, y, x + len/2, y - len);
   }else{
-    num = num - 4;
-    sierpinski(x + len + l, y, len - 4 + n);
-    
+    sierpinski(x, y, len/2);
+    sierpinski(x + len/2, y, len/2);
+    sierpinski(x + len/4, y - len/2, len/2);
   }
 }
