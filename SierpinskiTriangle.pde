@@ -20,10 +20,9 @@ public void draw()
     //}
     if(change%2 == 0){
       noStroke();
-      change = change - 1;
+      change = change + 2;
     }else{
       stroke(1);
-      change = change + 1;
     }
   }
 }
