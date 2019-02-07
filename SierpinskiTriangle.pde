@@ -9,7 +9,7 @@ public void setup()
 }
 public void draw()
 {
-  sierpinski(500 - change/2 ,change/2,change);
+  sierpinski(500 - ((int)change)/2 ,((int)change)/2,change);
   if(mouse == true){
     //if(change%100 == 0){
       //change = change + 2;
@@ -33,10 +33,11 @@ public void mouseClicked()//optional
 public void sierpinski(int x, int y, int len) 
 {
   if(len <= 20){//Math.sqrt(change)){ //50 looks nice
-    triangle(x, y, x + len, y, x + len/2, y - len);
+  fill(255);
+    triangle(x, y, x + len, y, x + ((int)len)/2, y - len);
   }else{
-    sierpinski(x, y, len/2);
-    sierpinski(x + len/2, y, len/2);
-    sierpinski(x + len/4, y - len/2, len/2);
+    sierpinski(x, y, ((int)len)/2);
+    sierpinski(x + ((int)len)/2, y, ((int)len)/2);
+    sierpinski(x + ((int)len)/4, y - ((int)len)/2, ((int)len)/2);
   }
 }
