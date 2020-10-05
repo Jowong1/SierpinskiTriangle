@@ -1,7 +1,7 @@
 Sierpinski Triangle
 ==================
 
-Try out my program: https://objectjosh.github.io/SierpinkskiTriangle/
+Try out my program: https://objectjosh.github.io/SierpinskiTriangle/
 -----------------------------------
 
 Prompt and Instructions:
